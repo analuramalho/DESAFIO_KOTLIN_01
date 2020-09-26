@@ -1,0 +1,2 @@
+class DigitalHouse_Manager {
+}
