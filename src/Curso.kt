@@ -1,24 +1,25 @@
-class Curso(private val codigo:Int,
-            private val nomeCurso:String,
-            private val profTitular:ProfessorTitular,
-            private val profAdjunto:ProfessorAdjunto, private val qtdMaxAlunos: Int) {
-    private val listaAlunosMatriculados= mutableListOf<Aluno>()
+class Curso(val codigo: Int,
+            val nomeCurso: String,
+            val qtdMaxAlunos: Int) {
 
-    private fun adicionarAluno(aluno: Aluno):Boolean{
-        if(aluno!=null){
+    var profTitular: ProfessorTitular? = null
+    var profAdjunto: ProfessorAdjunto? = null
+    private var listaAlunosMatriculados = mutableListOf<Aluno>()
+
+
+    fun adicionarAluno(aluno: Aluno): Boolean {
+        if (listaAlunosMatriculados.size < qtdMaxAlunos) {
             listaAlunosMatriculados.add(aluno)
-            println("Aluno: $aluno Adicionado com sucesso !")
+            println("Aluno ${aluno.nome} Adicionado com sucesso !")
             return true
         }
         return false
     }
 
-    private fun excluirAluno(aluno: Aluno){
-        listaAlunosMatriculados.indexOf(aluno)
-        if(aluno!=null){
-            listaAlunosMatriculados.remove(aluno)
-            println("Aluno: $aluno Excluido com sucesso !")
-        }
+
+    fun excluirAluno(aluno: Aluno) {
+        listaAlunosMatriculados.remove(aluno)
+        println("Aluno: $aluno Excluido com sucesso !")
     }
 
 

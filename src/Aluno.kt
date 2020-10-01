@@ -1,2 +1,1 @@
-data class Aluno(private val nome:String, private val sobrenome:String, private val codigo: Int) {
-}
+data class Aluno(val nome:String, val sobrenome:String, val codigo: Int)
