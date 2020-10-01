@@ -1,2 +1,0 @@
-class DigitalHouse_Manager {
-}
